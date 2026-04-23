@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Map-matched color palette ── */
+  --bg: #070d1a;
+  --bg2: #0d1528;
+  --bg3: #111e35;
+  --bg4: #162240;
+  --border: #1e2d4a;
+  --border2: #2a3d5e;
+
+  --txt: #e8eef8;
+  --txt2: #9aaec8;
+  --txt3: #5a7494;
+  --txt4: #3a5070;
+
+  /* Region colors — directly from the map */
+  --americas: #e8294a;
+  /* Canada/USA red */
+  --s-america: #e8721a;
+  /* Brazil orange */
+  --europe: #2ebc6e;
+  /* Europe green */
+  --russia: #6b2fc4;
+  /* Russia purple */
+  --africa: #e8b418;
+  /* Africa gold */
+  --m-east: #d42090;
+  /* Middle East pink */
+  --india: #e86820;
+  /* India orange */
+  --c-asia: #18a89e;
+  /* Central Asia teal */
+  --e-asia: #18b8d8;
+  /* East Asia cyan */
+  --se-asia: #38b848;
+  /* SE Asia green */
+  --oceania: #2855e8;
+  /* Australia blue */
+
+  /* UI accents */
+  --blue: #2563eb;
+  --blue-l: rgba(37, 99, 235, 0.15);
+  --red: #e8294a;
+  --red-l: rgba(232, 41, 74, 0.15);
+  --green: #2ebc6e;
+  --green-l: rgba(46, 188, 110, 0.15);
+  --amber: #e8b418;
+  --amber-l: rgba(232, 180, 24, 0.15);
+  --purple: #6b2fc4;
+  --purple-l: rgba(107, 47, 196, 0.15);
+
+  --font-body: 'Syne', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--font-body);
+  font-size: 13px;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+
+/* Leaflet fix */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Custom animations */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
